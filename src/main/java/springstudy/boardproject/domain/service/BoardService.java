@@ -32,7 +32,7 @@ public class BoardService {
     }
 
     @Transactional
-    public void modify(Long postId, AddPostingForm modifyPost){
+    public void update(Long postId, AddPostingForm modifyPost){
         boardRepository.update(postId, modifyPost.getTitle(), modifyPost.getContent());
     }
 

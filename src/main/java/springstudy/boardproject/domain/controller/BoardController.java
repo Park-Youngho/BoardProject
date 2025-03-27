@@ -59,6 +59,7 @@ public class BoardController {
         model.addAttribute("post", findPost);
         return "boardview";
     }
+
     //글 수정 폼
     @GetMapping("/modify/{id}")
     public String modifyBoard(@PathVariable("id") Long id, Model model){
@@ -74,7 +75,7 @@ public class BoardController {
             log.info("error ={}", bindingResult);
             return "boardmodify";
         }
-        boardService.modify(id, modifyPost);
+        boardService.update(id, modifyPost);
         return "redirect:/view/" + id; // 수정 후 글 상세보기로 이동
     }
 }
