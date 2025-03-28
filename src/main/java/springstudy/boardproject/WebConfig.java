@@ -3,8 +3,8 @@ package springstudy.boardproject;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import springstudy.boardproject.domain.interceptor.LogInterceptor;
-import springstudy.boardproject.domain.interceptor.LoginCheckInterceptor;
+import springstudy.boardproject.interceptor.LogInterceptor;
+import springstudy.boardproject.interceptor.LoginCheckInterceptor;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {

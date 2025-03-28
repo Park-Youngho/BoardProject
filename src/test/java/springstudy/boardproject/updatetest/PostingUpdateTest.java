@@ -6,11 +6,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
-import springstudy.boardproject.domain.entity.Member;
 import springstudy.boardproject.domain.entity.Posting;
 import springstudy.boardproject.domain.form.AddPostingForm;
-import springstudy.boardproject.domain.service.BoardService;
-import springstudy.boardproject.domain.service.MemberService;
+import springstudy.boardproject.service.BoardService;
 
 @SpringBootTest
 @Transactional

@@ -1,4 +1,4 @@
-package springstudy.boardproject.domain.controller;
+package springstudy.boardproject.controller;
 
 
 import lombok.RequiredArgsConstructor;
@@ -8,9 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import springstudy.boardproject.domain.entity.Member;
 import springstudy.boardproject.domain.entity.Posting;
-import springstudy.boardproject.domain.repository.BoardRepository;
-import springstudy.boardproject.domain.repository.MemberRepository;
-import springstudy.boardproject.domain.service.BoardService;
+import springstudy.boardproject.service.BoardService;
 
 import java.util.List;
 

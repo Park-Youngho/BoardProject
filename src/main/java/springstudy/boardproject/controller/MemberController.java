@@ -1,4 +1,4 @@
-package springstudy.boardproject.domain.controller;
+package springstudy.boardproject.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import springstudy.boardproject.domain.entity.Member;
 import springstudy.boardproject.domain.form.AddMemberForm;
-import springstudy.boardproject.domain.repository.MemberRepository;
+import springstudy.boardproject.repository.MemberRepository;
 
 @Slf4j
 @RequiredArgsConstructor

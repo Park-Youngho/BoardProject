@@ -1,4 +1,4 @@
-package springstudy.boardproject.domain.interceptor;
+package springstudy.boardproject.interceptor;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

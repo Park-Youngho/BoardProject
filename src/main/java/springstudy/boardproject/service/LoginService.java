@@ -1,10 +1,10 @@
-package springstudy.boardproject.domain.service;
+package springstudy.boardproject.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import springstudy.boardproject.domain.entity.Member;
 import springstudy.boardproject.domain.form.LoginForm;
-import springstudy.boardproject.domain.repository.MemberRepository;
+import springstudy.boardproject.repository.MemberRepository;
 
 import java.util.List;
 

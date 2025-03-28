@@ -1,4 +1,4 @@
-package springstudy.boardproject.domain.controller;
+package springstudy.boardproject.controller;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import springstudy.boardproject.domain.entity.Member;
 import springstudy.boardproject.domain.form.LoginForm;
-import springstudy.boardproject.domain.service.LoginService;
-import springstudy.boardproject.domain.repository.MemberRepository;
+import springstudy.boardproject.service.LoginService;
+import springstudy.boardproject.repository.MemberRepository;
 
 @Controller
 @RequiredArgsConstructor

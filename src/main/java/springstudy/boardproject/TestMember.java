@@ -6,10 +6,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import springstudy.boardproject.domain.entity.Member;
 import springstudy.boardproject.domain.entity.Posting;
-import springstudy.boardproject.domain.repository.BoardRepository;
-import springstudy.boardproject.domain.repository.MemberRepository;
-import springstudy.boardproject.domain.service.BoardService;
-import springstudy.boardproject.domain.service.MemberService;
+import springstudy.boardproject.service.BoardService;
+import springstudy.boardproject.service.MemberService;
 
 @RequiredArgsConstructor
 @Component

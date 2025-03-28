@@ -1,11 +1,11 @@
-package springstudy.boardproject.domain.service;
+package springstudy.boardproject.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import springstudy.boardproject.domain.entity.Posting;
 import springstudy.boardproject.domain.form.AddPostingForm;
-import springstudy.boardproject.domain.repository.BoardRepository;
+import springstudy.boardproject.repository.BoardRepository;
 
 import java.util.List;
 

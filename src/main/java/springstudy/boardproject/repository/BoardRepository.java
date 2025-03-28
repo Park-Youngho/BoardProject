@@ -1,4 +1,4 @@
-package springstudy.boardproject.domain.repository;
+package springstudy.boardproject.repository;
 
 
 import jakarta.persistence.EntityManager;

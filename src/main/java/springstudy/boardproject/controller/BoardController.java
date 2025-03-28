@@ -1,8 +1,7 @@
-package springstudy.boardproject.domain.controller;
+package springstudy.boardproject.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -16,7 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import springstudy.boardproject.domain.entity.Member;
 import springstudy.boardproject.domain.form.AddPostingForm;
 import springstudy.boardproject.domain.entity.Posting;
-import springstudy.boardproject.domain.service.BoardService;
+import springstudy.boardproject.service.BoardService;
 
 
 @Slf4j
