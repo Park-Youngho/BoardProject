@@ -28,54 +28,10 @@
 
         </div>
     </div>
+    <table th:replace="fragments/posting :: posting"></table>
 
-    <table class="table mt-3">
-        <thead class="table-light">
-        <tr>
-            <th class="text-center" >번호</th>
-            <th class="text-center" >제목</th>
-            <th class="text-center">작성자</th>
-            <th class="text-center">작성일</th>
-            <th class="text-center">조회수</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="post : ${posts}">
-            <td class="text-center">
-                <a th:text="${post.id}" th:href="@{/view/{id}(id=${post.id})}"></a>
-            </td>
-            <td class="text-center">
-                <a  th:text="${post.title}" th:href="@{/view/{id}(id=${post.id})}"></a>
-            </td>
-            <td class="text-center" th:text="${post.username}"></td>
-            <td class="text-center" th:text="${post.createDate}"></td>
-            <td class="text-center">0</td>
-        </tr>
-        </tbody>
-    </table>
-    <div class="container my-3">
-        <!-- 페이징처리 시작 -->
-        <div th:if="${posts}">
-            <ul class="pagination justify-content-center">
-                <li class="page-item" th:classappend="${!posts.hasPrevious} ? 'disabled'">
-                    <a class="page-link" th:href="@{|?page=${posts.getNumber()-1}|}">
-                        <span>이전</span>
-                    </a>
-                </li>
-                <li th:each="page: ${#numbers.sequence(0, posts.getTotalPages()-1)}"
-                    th:if="${page >= posts.getNumber()-5 and page <= posts.getNumber()+5}"
-                    th:classappend="${page == posts.getNumber()} ? 'active'" class="page-item">
-                    <a th:text="${page}" class="page-link" th:href="@{|?page=${page}|}"></a>
-                </li>
-                <li class="page-item" th:classappend="${!posts.hasNext} ? 'disabled'">
-                    <a class="page-link" th:href="@{|?page=${posts.getNumber()+1}|}">
-                        <span>다음</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <!-- 페이징처리 끝 -->
-    </div>
+    <div th:replace="fragments/pagination :: pagination"></div>
+
 </div>
 </body>
 </html>
