@@ -16,7 +16,7 @@ public class Posting {
     private String title;
     private String username;
 
-    private LocalDate createdDate;
+    private LocalDate createDate;
     private LocalDate modifiedDate;
     private String content;
 
@@ -27,7 +27,7 @@ public class Posting {
     public Posting(String title, String username, String content) {
         this.title = title;
         this.username = username;
-        this.createdDate = LocalDate.now();
+        this.createDate = LocalDate.now();
         this.content = content;
     }
 }

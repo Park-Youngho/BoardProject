@@ -3,6 +3,7 @@ package springstudy.boardproject.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -19,9 +20,12 @@ import java.util.List;
 public class HomeController {
     private final BoardService boardService;
     @GetMapping
-    public String home(@SessionAttribute(name = "loginMember", required = false) Member loginMember,
+    public String home(@RequestParam(value = "page", defaultValue ="0") int page,
+            @SessionAttribute(name = "loginMember", required = false) Member loginMember,
                        Model model){
-        boardList(model);
+        Page<Posting> paging = boardService.getList(page);
+        model.addAttribute("posts", paging);
+        //boardList(model);
         if(loginMember == null) {
             return "home";
         }
@@ -29,8 +33,13 @@ public class HomeController {
         return "loginHome";
     }
 
-    private void boardList(Model model) {
-        List<Posting> posts = boardService.findAll();
-        model.addAttribute("posts", posts);
+    private void makePageList(int page, Model model) {
+        Page<Posting> paging = boardService.getList(page);
+        model.addAttribute("posts", paging);
     }
+
+//    private void boardList(Model model) {
+//        List<Posting> posts = boardService.findAll();
+//        model.addAttribute("posts", posts);
+//    }
 }
