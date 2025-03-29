@@ -25,17 +25,11 @@ public class HomeController {
                        Model model){
         Page<Posting> paging = boardService.getList(page);
         model.addAttribute("posts", paging);
-        //boardList(model);
         if(loginMember == null) {
             return "home";
         }
         model.addAttribute("member", loginMember);
         return "loginHome";
-    }
-
-    private void makePageList(int page, Model model) {
-        Page<Posting> paging = boardService.getList(page);
-        model.addAttribute("posts", paging);
     }
 
 //    private void boardList(Model model) {

@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter @Setter
 @Entity
@@ -16,8 +17,8 @@ public class Posting {
     private String title;
     private String username;
 
-    private LocalDate createDate;
-    private LocalDate modifiedDate;
+    private LocalDateTime createDate;
+    private LocalDateTime modifiedDate;
     private String content;
 
     public Posting(){
@@ -27,7 +28,7 @@ public class Posting {
     public Posting(String title, String username, String content) {
         this.title = title;
         this.username = username;
-        this.createDate = LocalDate.now();
+        this.createDate = LocalDateTime.now();
         this.content = content;
     }
 }

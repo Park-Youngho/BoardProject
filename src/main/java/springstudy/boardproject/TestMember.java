@@ -22,7 +22,7 @@ public class TestMember {
             boardService.save(post);
         }
         Member member = new Member("test", "test1", "test");
-        Member member2 = new Member("ajk1330", "1234", "번개맨");
+        Member member2 = new Member("ajk1330", "1234", "test");
         memberService.save(member);
         memberService.save(member2);
     }

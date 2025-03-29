@@ -42,6 +42,7 @@ public class BoardService {
         boardRepository.update(postId, modifyPost.getTitle(), modifyPost.getContent());
     }
 
+    @Transactional(readOnly = true)
     public Page<Posting> getList(int page){
         List<Sort.Order> sorts = new ArrayList<>();
         sorts.add(Sort.Order.desc("createDate"));

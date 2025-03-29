@@ -11,7 +11,7 @@
   <table th:fragment="posting" class="table mt-3">
     <thead class="table-light">
     <tr>
-      <th class="text-center" >번호</th>
+<!--      <th class="text-center" >번호</th>-->
       <th class="text-center" >제목</th>
       <th class="text-center">작성자</th>
       <th class="text-center">작성일</th>
@@ -19,15 +19,16 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="post : ${posts}">
-      <td class="text-center">
-        <a th:text="${post.id}" th:href="@{/view/{id}(id=${post.id})}"></a>
-      </td>
+    <tr th:each="post,loop : ${posts}">
+<!--      <td class="text-center">-->
+<!--        <a th:text="${post.id}" th:href="@{/view/{id}(id=${post.id})}"></a>-->
+<!--      </td>-->
+<!--      <td class="text-center" th:text="${post.getTotalElements() - (posts.getNumber() * posts.getSize()) - loop.index}"></td>-->
       <td class="text-center">
         <a  th:text="${post.title}" th:href="@{/view/{id}(id=${post.id})}"></a>
       </td>
       <td class="text-center" th:text="${post.username}"></td>
-      <td class="text-center" th:text="${post.createDate}"></td>
+      <td class="text-center" th:text="${#temporals.format(post.createDate, 'yyyy-MM-dd HH:mm')}"></td>
       <td class="text-center">0</td>
     </tr>
     </tbody>
