@@ -4,10 +4,10 @@ package springstudy.boardproject;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import springstudy.boardproject.domain.entity.Member;
-import springstudy.boardproject.domain.entity.Posting;
-import springstudy.boardproject.service.BoardService;
-import springstudy.boardproject.service.MemberService;
+import springstudy.boardproject.member.entity.Member;
+import springstudy.boardproject.board.entity.Board;
+import springstudy.boardproject.board.service.BoardService;
+import springstudy.boardproject.member.service.MemberService;
 
 @RequiredArgsConstructor
 @Component
@@ -18,7 +18,7 @@ public class TestMember {
     @PostConstruct
     public void init(){
         for(int i=0; i<100; i++){
-            Posting post = new Posting("테스트"+i, "테스트맨" + i, "테스트내용" + i);
+            Board post = new Board("테스트"+i, "테스트맨" + i, "테스트내용" + i);
             boardService.save(post);
         }
         Member member = new Member("test", "test1", "test");

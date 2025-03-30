@@ -1,4 +1,4 @@
-package springstudy.boardproject.domain.entity;
+package springstudy.boardproject.board.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -6,12 +6,11 @@ import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter @Setter
 @Entity
-public class Posting {
+public class Board {
     @Id @GeneratedValue
     private Long id;
     private String title;
@@ -21,11 +20,11 @@ public class Posting {
     private LocalDateTime modifiedDate;
     private String content;
 
-    public Posting(){
+    public Board(){
 
     }
 
-    public Posting(String title, String username, String content) {
+    public Board(String title, String username, String content) {
         this.title = title;
         this.username = username;
         this.createDate = LocalDateTime.now();

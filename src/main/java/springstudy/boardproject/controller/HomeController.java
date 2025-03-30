@@ -7,11 +7,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import springstudy.boardproject.domain.entity.Member;
-import springstudy.boardproject.domain.entity.Posting;
-import springstudy.boardproject.service.BoardService;
-
-import java.util.List;
+import springstudy.boardproject.member.entity.Member;
+import springstudy.boardproject.board.entity.Board;
+import springstudy.boardproject.board.service.BoardService;
 
 @Controller
 @RequestMapping("/")
@@ -23,7 +21,7 @@ public class HomeController {
     public String home(@RequestParam(value = "page", defaultValue ="0") int page,
             @SessionAttribute(name = "loginMember", required = false) Member loginMember,
                        Model model){
-        Page<Posting> paging = boardService.getList(page);
+        Page<Board> paging = boardService.getList(page);
         model.addAttribute("posts", paging);
         if(loginMember == null) {
             return "home";
@@ -32,8 +30,5 @@ public class HomeController {
         return "loginHome";
     }
 
-//    private void boardList(Model model) {
-//        List<Posting> posts = boardService.findAll();
-//        model.addAttribute("posts", posts);
-//    }
+
 }

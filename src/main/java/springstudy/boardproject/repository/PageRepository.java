@@ -3,8 +3,8 @@ package springstudy.boardproject.repository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
-import springstudy.boardproject.domain.entity.Posting;
+import springstudy.boardproject.board.entity.Board;
 
-public interface PageRepository extends JpaRepository<Posting, Long> {
-    Page<Posting> findAll(Pageable pageable);
+public interface PageRepository extends JpaRepository<Board, Long> {
+    Page<Board> findAll(Pageable pageable);
 }

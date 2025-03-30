@@ -1,39 +1,36 @@
-package springstudy.boardproject.repository;
+package springstudy.boardproject.board.repository;
 
 
 import jakarta.persistence.EntityManager;
-import jakarta.validation.constraints.NotBlank;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import springstudy.boardproject.domain.entity.Posting;
+import springstudy.boardproject.board.entity.Board;
 
 import java.util.List;
-import java.util.concurrent.Future;
 
 @Repository
 @RequiredArgsConstructor
 public class BoardRepository{
     private final EntityManager em;
-    public Long save(Posting post) {
+    public Long save(Board post) {
         em.persist(post);
         return post.getId();
     }
 
-    public List<Posting> findAll() {
-        List<Posting> Postings = em.createQuery("select p from Posting p", Posting.class).getResultList();
+    public List<Board> findAll() {
+        List<Board> Postings = em.createQuery("select p from Board p", Board.class).getResultList();
         return Postings;
     }
 
-    public Posting findById(Long id) {
-        Posting findPost = em.find(Posting.class, id);
+    public Board findById(Long id) {
+        Board findPost = em.find(Board.class, id);
         return findPost;
     }
 
     //변경감지를 통한 업데이트
     public void update(Long id, String title, String content) {
-        Posting findPost = findById(id);
+        Board findPost = findById(id);
         findPost.setTitle(title);
         findPost.setContent(content);
     }

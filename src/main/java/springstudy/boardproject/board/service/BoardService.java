@@ -1,4 +1,4 @@
-package springstudy.boardproject.service;
+package springstudy.boardproject.board.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -7,9 +7,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import springstudy.boardproject.domain.entity.Posting;
+import springstudy.boardproject.board.entity.Board;
 import springstudy.boardproject.domain.form.AddPostingForm;
-import springstudy.boardproject.repository.BoardRepository;
+import springstudy.boardproject.board.repository.BoardRepository;
 import springstudy.boardproject.repository.PageRepository;
 
 import java.util.ArrayList;
@@ -21,19 +21,19 @@ public class BoardService {
     private final BoardRepository boardRepository;
     private final PageRepository pageRepository;
     @Transactional
-    public Long save(Posting post){
+    public Long save(Board post){
         return boardRepository.save(post);
     }
     
     //읽기 전용
     @Transactional(readOnly = true)
-    public List<Posting> findAll(){
+    public List<Board> findAll(){
         return boardRepository.findAll();
     }
 
     //읽기전용
     @Transactional(readOnly = true)
-    public Posting findById(Long id){
+    public Board findById(Long id){
         return boardRepository.findById(id);
     }
 
@@ -43,7 +43,7 @@ public class BoardService {
     }
 
     @Transactional(readOnly = true)
-    public Page<Posting> getList(int page){
+    public Page<Board> getList(int page){
         List<Sort.Order> sorts = new ArrayList<>();
         sorts.add(Sort.Order.desc("createDate"));
         Pageable pageable = PageRequest.of(page, 10, Sort.by(sorts));

@@ -6,9 +6,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
-import springstudy.boardproject.domain.entity.Posting;
+import springstudy.boardproject.board.entity.Board;
 import springstudy.boardproject.domain.form.AddPostingForm;
-import springstudy.boardproject.service.BoardService;
+import springstudy.boardproject.board.service.BoardService;
 
 @SpringBootTest
 @Transactional
@@ -19,7 +19,7 @@ public class PostingUpdateTest {
     @Test
     public void update() throws Exception{
         //given
-        Posting post = new Posting("테스트1", "번개맨", "테스트 내용");
+        Board post = new Board("테스트1", "번개맨", "테스트 내용");
         String testTitle = post.getTitle();
         String testContent = post.getContent();
         Long id = boardService.save(post);
@@ -32,7 +32,7 @@ public class PostingUpdateTest {
         em.flush();
         em.clear(); //테스트를 위해 엔티티매니저 비우기
         //then
-        Posting findPost = boardService.findById(id);
+        Board findPost = boardService.findById(id);
 
         //기존의 내용과 업데이트한 게시물의 내용이 달라졌는지 테스트
         Assertions.assertThat(testTitle).isNotEqualTo(findPost.getTitle());

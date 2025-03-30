@@ -1,4 +1,4 @@
-package springstudy.boardproject.controller;
+package springstudy.boardproject.member.controller;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import springstudy.boardproject.domain.entity.Member;
+import springstudy.boardproject.member.entity.Member;
 import springstudy.boardproject.domain.form.LoginForm;
-import springstudy.boardproject.service.LoginService;
-import springstudy.boardproject.repository.MemberRepository;
+import springstudy.boardproject.member.service.LoginService;
+import springstudy.boardproject.member.repository.MemberRepository;
 
 @Controller
 @RequiredArgsConstructor

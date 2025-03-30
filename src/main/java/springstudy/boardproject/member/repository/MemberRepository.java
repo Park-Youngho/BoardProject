@@ -1,11 +1,10 @@
-package springstudy.boardproject.repository;
+package springstudy.boardproject.member.repository;
 
 
 import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import springstudy.boardproject.domain.entity.Member;
+import springstudy.boardproject.member.entity.Member;
 
 import java.util.List;
 
