@@ -1,4 +1,4 @@
-package springstudy.boardproject.domain.form;
+package springstudy.boardproject.member.dto;
 
 
 import jakarta.persistence.GeneratedValue;

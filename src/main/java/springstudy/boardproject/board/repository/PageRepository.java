@@ -1,4 +1,4 @@
-package springstudy.boardproject.repository;
+package springstudy.boardproject.board.repository;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

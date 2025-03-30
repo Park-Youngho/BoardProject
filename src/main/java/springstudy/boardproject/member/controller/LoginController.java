@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import springstudy.boardproject.member.entity.Member;
-import springstudy.boardproject.domain.form.LoginForm;
+import springstudy.boardproject.member.dto.LoginForm;
 import springstudy.boardproject.member.service.LoginService;
 import springstudy.boardproject.member.repository.MemberRepository;
 

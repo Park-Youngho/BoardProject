@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import springstudy.boardproject.member.entity.Member;
-import springstudy.boardproject.domain.form.AddMemberForm;
+import springstudy.boardproject.member.dto.AddMemberForm;
 import springstudy.boardproject.member.repository.MemberRepository;
 
 @Slf4j

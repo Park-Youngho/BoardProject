@@ -3,7 +3,7 @@ package springstudy.boardproject.member.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import springstudy.boardproject.member.entity.Member;
-import springstudy.boardproject.domain.form.LoginForm;
+import springstudy.boardproject.member.dto.LoginForm;
 import springstudy.boardproject.member.repository.MemberRepository;
 
 import java.util.List;

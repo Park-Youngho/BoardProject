@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 import springstudy.boardproject.board.entity.Board;
-import springstudy.boardproject.domain.form.AddPostingForm;
+import springstudy.boardproject.board.dto.AddPostingForm;
 import springstudy.boardproject.board.service.BoardService;
 
 @SpringBootTest

@@ -1,4 +1,4 @@
-package springstudy.boardproject.domain.form;
+package springstudy.boardproject.board.dto;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;

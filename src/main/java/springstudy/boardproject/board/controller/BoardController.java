@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import springstudy.boardproject.member.entity.Member;
-import springstudy.boardproject.domain.form.AddPostingForm;
+import springstudy.boardproject.board.dto.AddPostingForm;
 import springstudy.boardproject.board.entity.Board;
 import springstudy.boardproject.board.service.BoardService;
 

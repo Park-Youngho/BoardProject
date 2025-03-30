@@ -8,9 +8,9 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import springstudy.boardproject.board.entity.Board;
-import springstudy.boardproject.domain.form.AddPostingForm;
+import springstudy.boardproject.board.dto.AddPostingForm;
 import springstudy.boardproject.board.repository.BoardRepository;
-import springstudy.boardproject.repository.PageRepository;
+import springstudy.boardproject.board.repository.PageRepository;
 
 import java.util.ArrayList;
 import java.util.List;
