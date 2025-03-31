@@ -35,4 +35,9 @@ public class BoardRepository{
         findPost.setContent(content);
     }
 
+    public void delete(Long id){
+        Board findPost = findById(id);
+        em.remove(findPost);
+    }
+
 }

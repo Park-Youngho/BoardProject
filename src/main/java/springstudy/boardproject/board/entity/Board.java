@@ -21,15 +21,17 @@ public class Board {
     private LocalDateTime createDate;
     private LocalDateTime modifiedDate;
     private String content;
-
+    private int viewCount;
     public Board(){
 
     }
-
     public Board(String title, String content, Member member) {
         this.title = title;
         this.member = member;
         this.createDate = LocalDateTime.now();
         this.content = content;
+    }
+    public void viewCountUp(){
+        this.viewCount++;
     }
 }

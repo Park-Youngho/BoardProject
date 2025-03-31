@@ -8,10 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import springstudy.boardproject.member.entity.Member;
 import springstudy.boardproject.board.dto.AddPostingForm;
 import springstudy.boardproject.board.entity.Board;
@@ -49,8 +46,9 @@ public class BoardController {
     }
     //글 상세보기
     @GetMapping("/view/{id}")
-    public String boardView(@PathVariable Long id, Model model){
+    public String boardView(@PathVariable Long id, Model model, HttpServletRequest request){
         Board findPost = boardService.findById(id);
+        boardService.plusViewCount(id); // 상세보기를 누르면 조회수 오르게 작성
         //찾은 게시물이 null일 경우 예외처리 로직 구상중 일단 리턴
         if(findPost== null){
             return "boardview";
@@ -76,5 +74,10 @@ public class BoardController {
         }
         boardService.update(id, modifyPost);
         return "redirect:/view/" + id; // 수정 후 글 상세보기로 이동
+    }
+    @GetMapping("/delete/{id}")
+    public String deleteBoard(@PathVariable("id") Long id){
+        boardService.delete(id);
+        return "redirect:/";
     }
 }

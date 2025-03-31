@@ -49,9 +49,15 @@ public class BoardService {
         Pageable pageable = PageRequest.of(page, 10, Sort.by(sorts));
         return pageRepository.findAll(pageable);
     }
+    @Transactional
+    public void plusViewCount(Long id){
+        Board findPost = findById(id);
+        findPost.viewCountUp();
+    }
 
-//    @Transactional
-//    public void delete(Long id){
-//        boardRepository.delete(id);
-//    }
+    @Transactional
+    public void delete(Long id) {
+        boardRepository.delete(id);
+    }
+
 }

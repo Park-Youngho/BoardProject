@@ -42,12 +42,13 @@
 
     <!-- 버튼 그룹 -->
     <div class="d-flex justify-content-end">
+      <button type="button" class="btn btn-danger  me-2"
+              th:onclick="|location.href='@{/delete/{id}(id=${post.id})}'|">삭제</button>
       <button type="button" class="btn btn-primary me-2"
               th:onclick="|location.href='@{/modify/{id}(id=${post.id})}'|">수정</button>
       <button type="button" class="btn btn-secondary"
               onclick="location.href='/board.html'"
-              th:onclick="|location.href='@{/}'|"
-      >취소</button>
+              th:onclick="|location.href='@{/}'|">취소</button>
     </div>
   </form>
 </div>
