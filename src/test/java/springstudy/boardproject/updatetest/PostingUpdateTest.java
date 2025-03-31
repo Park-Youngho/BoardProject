@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import springstudy.boardproject.board.entity.Board;
 import springstudy.boardproject.board.dto.AddPostingForm;
 import springstudy.boardproject.board.service.BoardService;
+import springstudy.boardproject.member.entity.Member;
 
 @SpringBootTest
 @Transactional
@@ -19,7 +20,8 @@ public class PostingUpdateTest {
     @Test
     public void update() throws Exception{
         //given
-        Board post = new Board("테스트1", "번개맨", "테스트 내용");
+        Member member = new Member("test2", "test2", "test2");
+        Board post = new Board("테스트123", "내영", member);
         String testTitle = post.getTitle();
         String testContent = post.getContent();
         Long id = boardService.save(post);

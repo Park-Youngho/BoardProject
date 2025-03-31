@@ -1,10 +1,9 @@
 package springstudy.boardproject.board.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import springstudy.boardproject.member.entity.Member;
 
 import java.time.LocalDateTime;
 
@@ -14,7 +13,10 @@ public class Board {
     @Id @GeneratedValue
     private Long id;
     private String title;
-    private String username;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "member_id")
+    private Member member;
 
     private LocalDateTime createDate;
     private LocalDateTime modifiedDate;
@@ -24,9 +26,9 @@ public class Board {
 
     }
 
-    public Board(String title, String username, String content) {
+    public Board(String title, String content, Member member) {
         this.title = title;
-        this.username = username;
+        this.member = member;
         this.createDate = LocalDateTime.now();
         this.content = content;
     }

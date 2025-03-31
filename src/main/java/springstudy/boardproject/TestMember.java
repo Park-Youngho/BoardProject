@@ -17,13 +17,14 @@ public class TestMember {
 
     @PostConstruct
     public void init(){
-        for(int i=0; i<100; i++){
-            Board post = new Board("테스트"+i, "테스트맨" + i, "테스트내용" + i);
-            boardService.save(post);
-        }
         Member member = new Member("test", "test1", "test");
         Member member2 = new Member("ajk1330", "1234", "test");
         memberService.save(member);
         memberService.save(member2);
+        for(int i=0; i<100; i++){
+            Board post = new Board("테스트"+i, "테스트맨" + i, member2);
+            boardService.save(post);
+        }
+
     }
 }

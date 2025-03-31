@@ -25,7 +25,7 @@
     <div class="mb-3">
       <label for="username" class="form-label">작성자</label>
       <input type="text" id="username"
-             class="form-control" th:placeholder="${post.username}" placeholder="작성자 닉네임" disabled>
+             class="form-control" th:placeholder="${post.getMember().getUsername()}" placeholder="작성자 닉네임" disabled>
     </div>
     <div class="mb-3">
       <label for="title" class="form-label">제목</label>

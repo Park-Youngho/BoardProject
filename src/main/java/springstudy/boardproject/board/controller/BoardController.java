@@ -42,7 +42,7 @@ public class BoardController {
         Member loginMember = (Member)session.getAttribute("loginMember");
 
         //통과로직
-        Board post = new Board(postingForm.getTitle(), loginMember.getUsername(), postingForm.getContent());
+        Board post = new Board(postingForm.getTitle(), postingForm.getContent(), loginMember);
 
         boardService.save(post);
         return "redirect:/";

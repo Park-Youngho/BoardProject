@@ -27,7 +27,7 @@
       <td class="text-center">
         <a  th:text="${post.title}" th:href="@{/view/{id}(id=${post.id})}"></a>
       </td>
-      <td class="text-center" th:text="${post.username}"></td>
+      <td class="text-center" th:text="${post.getMember().getUsername()}"></td>
       <td class="text-center" th:text="${#temporals.format(post.createDate, 'yyyy-MM-dd HH:mm')}"></td>
       <td class="text-center">0</td>
     </tr>
