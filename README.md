@@ -67,7 +67,7 @@
 ![img_2.png](img/write.png)
 
 ### 로그인 메인화면
-![img.png](img/loginmain.png)
+![img.png](img/loginMain.png)
 ### 게시글 상세보기
 ![img_1.png](img/view.png)
 
@@ -78,7 +78,19 @@
 # 5. 구조 및 설계
 
 ### API 명세서
+<details>
+<summary>API 명세서 상세보기</summary>
+
 ![img.png](img/apiSpec.png)
+
+</details>
+
 ### 데이터베이스 ERD
 
+
+<details>
+<summary>ERD 상세보기</summary>
+
 ![img.png](img/erd.png)
+
+</details>
